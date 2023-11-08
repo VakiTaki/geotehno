@@ -1,0 +1,40 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "date": 1699430602491,
+      "importance": "Критическая",
+      "equipment": "ЛВС",
+      "message": "Обрыв силового кабеля Обрыв силового кабеля Обрыв силового кабеля Обрыв силового кабеля Обрыв силового кабеля Обрыв силового кабеля",
+      "responsible": "Ветрова И.С.",
+      "completed": true
+    },
+    {
+      "id": 2,
+      "date": 1699430602495,
+      "importance": "Высокая",
+      "equipment": "ИБП",
+      "message": "Низкий заряд батареи",
+      "responsible": "Лавочкин А.В.",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "date": 1699430602991,
+      "importance": "Низкая",
+      "equipment": "Люк",
+      "message": "Открыта крышка",
+      "responsible": "Капустин С.С.",
+      "completed": false
+    },
+    {
+      "id": 1699461491277,
+      "date": 1699461491277,
+      "importance": "Низкая",
+      "equipment": "Труба",
+      "message": "Сообщение 1",
+      "responsible": "Журавлева Л. М.",
+      "completed": false
+    }
+  ]
+}
