@@ -20,8 +20,11 @@ function Table() {
   };
   const { data: events = [], isSuccess } = useGetEventsQuery({
     message_like: globalFilterValue,
+    _sort: "date",
+    _order: "desc",
   });
   const [selectedEvents, setSelectedEvents] = useState<IEvent[] | null>(null);
+  console.log(selectedEvents);
   const [compliteEvent, { isError }] = useCompletedEventMutation();
 
   const changeStatus = async (payload: IEvent) => {
@@ -35,6 +38,12 @@ function Table() {
   const onRowUnselect = (event: DataTableUnselectEvent) => {
     changeStatus({ ...event.data, completed: false });
   };
+
+  useEffect(() => {
+    if (events) {
+      setSelectedEvents(events.filter((ev) => ev.completed));
+    }
+  }, [events]);
   return (
     <>
       <InputText

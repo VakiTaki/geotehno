@@ -16,7 +16,7 @@
       "equipment": "ИБП",
       "message": "Низкий заряд батареи",
       "responsible": "Лавочкин А.В.",
-      "completed": false
+      "completed": true
     },
     {
       "id": 3,
