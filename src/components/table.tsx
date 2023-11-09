@@ -10,6 +10,7 @@ import { Column } from "primereact/column";
 import { useCompletedEventMutation, useGetEventsQuery } from "../store";
 import { formatDate } from "../utils/formatDate";
 import { InputText } from "primereact/inputtext";
+import { IEvent } from "../interfaces/app.interfaces";
 
 function Table() {
   const [globalFilterValue, setGlobalFilterValue] = useState<string>("");
@@ -17,19 +18,22 @@ function Table() {
     const value = e.target.value;
     setGlobalFilterValue(value);
   };
-  const { data: events, isSuccess } = useGetEventsQuery({
+  const { data: events = [], isSuccess } = useGetEventsQuery({
     message_like: globalFilterValue,
   });
+  const [selectedEvents, setSelectedEvents] = useState<IEvent[] | null>(null);
   const [compliteEvent, { isError }] = useCompletedEventMutation();
 
-  const formatedData = events?.map((event) => ({
-    ...event,
-    date: formatDate(event.date),
-  }));
+  const changeStatus = async (payload: IEvent) => {
+    await compliteEvent(payload).unwrap();
+  };
 
-  const handleRowClick = (event: DataTableRowClickEvent) => {
-    const body = { ...event.data };
-    console.log(body);
+  const onRowSelect = (event: DataTableSelectEvent) => {
+    changeStatus({ ...event.data, completed: true });
+  };
+
+  const onRowUnselect = (event: DataTableUnselectEvent) => {
+    changeStatus({ ...event.data, completed: false });
   };
   return (
     <>
@@ -38,27 +42,33 @@ function Table() {
         onChange={onGlobalFilterChange}
         placeholder="Поиск по сообщению"
       />
+
       {isSuccess && (
         <div>
           <DataTable
-            value={formatedData}
+            value={events}
             paginator
             rows={5}
             rowsPerPageOptions={[5, 10]}
             sortMode="multiple"
             tableStyle={{ minWidth: "50rem" }}
             className="bg-red-500"
-            onRowClick={(e) => handleRowClick(e)}
+            selectionMode={"multiple"}
+            selection={selectedEvents!}
+            onSelectionChange={(e) => setSelectedEvents(e.value)}
+            dataKey="id"
+            onRowSelect={onRowSelect}
+            onRowUnselect={onRowUnselect}
           >
+            <Column
+              selectionMode="multiple"
+              headerStyle={{ width: "3rem" }}
+            ></Column>
             <Column
               field="date"
               sortable
               header="Дата"
-              body={(rowData) => (
-                <span className={rowData.completed ? " opacity-60 " : "  "}>
-                  {rowData.date}
-                </span>
-              )}
+              body={(rowData) => <span>{formatDate(rowData.date)}</span>}
             ></Column>
             <Column field="importance" sortable header="Важность"></Column>
             <Column field="equipment" sortable header="Оборудование"></Column>

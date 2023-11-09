@@ -7,7 +7,7 @@
       "equipment": "ЛВС",
       "message": "Обрыв силового кабеля Обрыв силового кабеля Обрыв силового кабеля Обрыв силового кабеля Обрыв силового кабеля Обрыв силового кабеля",
       "responsible": "Ветрова И.С.",
-      "completed": true
+      "completed": false
     },
     {
       "id": 2,
@@ -25,15 +25,6 @@
       "equipment": "Люк",
       "message": "Открыта крышка",
       "responsible": "Капустин С.С.",
-      "completed": false
-    },
-    {
-      "id": 1699461491277,
-      "date": 1699461491277,
-      "importance": "Низкая",
-      "equipment": "Труба",
-      "message": "Сообщение 1",
-      "responsible": "Журавлева Л. М.",
       "completed": false
     }
   ]

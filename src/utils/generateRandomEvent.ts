@@ -1,4 +1,4 @@
-import { Event } from "../interfaces/app.interfaces";
+import { IEvent } from "../interfaces/app.interfaces";
 
 function getRandomValue<T>(array: T[]): T {
   const randomIndex = Math.floor(Math.random() * array.length);
@@ -38,7 +38,7 @@ export const generateRandomEvent = () => {
   const randomEquipment: string = getRandomValue(equipmentTypes);
   const randomMessage: string = getRandomValue(messages);
   const randomResponsible: string = getRandomValue(responsibles);
-  const newObject: Event = {
+  const newObject: IEvent = {
     id: Date.now(),
     date: Date.now(),
     importance: randomImportance,

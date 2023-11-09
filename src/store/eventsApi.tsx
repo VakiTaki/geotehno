@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { Event } from "../interfaces/app.interfaces";
+import { IEvent } from "../interfaces/app.interfaces";
 import { objectToQueryString, KeyValueObject } from "../utils/objToQuery";
 
 export const eventsApi = createApi({
@@ -7,7 +7,7 @@ export const eventsApi = createApi({
   tagTypes: ["Events"],
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3003/" }),
   endpoints: (builder) => ({
-    getEvents: builder.query<Event[], KeyValueObject>({
+    getEvents: builder.query<IEvent[], KeyValueObject>({
       query: (queryParams) => `events${objectToQueryString(queryParams)}`,
       providesTags: (result) =>
         result
@@ -18,14 +18,14 @@ export const eventsApi = createApi({
           : [{ type: "Events", id: "LIST" }],
     }),
     addEvent: builder.mutation({
-      query: (body: Event) => ({ url: "events", method: "POST", body }),
+      query: (body: IEvent) => ({ url: "events", method: "POST", body }),
       invalidatesTags: [{ type: "Events", id: "LIST" }],
     }),
     completedEvent: builder.mutation({
-      query: (body: Event) => ({
-        url: `events/${body.id}`,
-        method: "PUTCH",
-        body,
+      query: (payload: IEvent) => ({
+        url: `events/${payload.id}`,
+        method: "PATCH",
+        body: payload,
       }),
       invalidatesTags: [{ type: "Events", id: "LIST" }],
     }),
