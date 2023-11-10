@@ -16,7 +16,7 @@ function App() {
     () => {
       addRandomEvent();
     },
-    5000,
+    1000,
     activeAddMessages
   );
   return (

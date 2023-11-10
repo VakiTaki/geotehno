@@ -10,6 +10,7 @@ import { useEventListener } from "primereact/hooks";
 import { paginate } from "../utils/paginate";
 
 function Table() {
+  const [countPerPage, setCountPerPage] = useState<number>(5);
   const [first, setFirst] = useState<number>(0);
   const [globalFilterValue, setGlobalFilterValue] = useState<string>("");
   const onGlobalFilterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -52,12 +53,14 @@ function Table() {
 
   const moveSelection = (step: number) => {
     const currentIndex = events.findIndex((ev) => ev.id === selectedRow?.id);
-    const newIndex = currentIndex < 0 ? 0 : currentIndex + step;
+    const newIndex = currentIndex < 0 ? first : currentIndex + step;
     if (newIndex >= 0 && newIndex < events.length) {
       setSelectedRow(events[newIndex]);
     }
-    if (newIndex < first) setFirst((prev) => (prev === 0 ? prev : prev - 5));
-    if (newIndex >= first + 5) setFirst((prev) => prev + 5);
+    if (newIndex < first)
+      setFirst((prev) => (prev === 0 ? prev : prev - countPerPage));
+    if (newIndex >= first + countPerPage)
+      setFirst((prev) => prev + countPerPage);
   };
 
   useEffect(() => {
@@ -68,8 +71,8 @@ function Table() {
   }, [bindKeyDown, unbindKeyDown]);
 
   const onPageChange = (event: PaginatorPageChangeEvent) => {
+    setSelectedRow(null);
     setFirst(event.first);
-    setSelectedRow(events[event.first]);
   };
 
   const handleRowClick = (e: DataTableRowClickEvent) => {
@@ -82,7 +85,7 @@ function Table() {
     if (eventById) changeStatus(eventById);
   };
 
-  const crop = paginate(events, first, 5);
+  const crop = paginate(events, first, countPerPage);
 
   return (
     <>
@@ -105,7 +108,7 @@ function Table() {
             selection={selectedRow!}
             onSelectionChange={(e) => {
               changeStatus(e.value);
-              setSelectedRow(e.value);
+              setSelectedRow(null);
             }}
             dataKey="id"
             emptyMessage="Ничего не найдено"
@@ -142,7 +145,7 @@ function Table() {
           <div className=" rounded-none">
             <Paginator
               first={first}
-              rows={5}
+              rows={countPerPage}
               totalRecords={events.length}
               onPageChange={onPageChange}
               style={{ borderRadius: "0px" }}

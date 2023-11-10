@@ -7,7 +7,7 @@
       "equipment": "ЛВС",
       "message": "Обрыв силового кабеля Обрыв силового кабеля Обрыв силового кабеля Обрыв силового кабеля Обрыв силового кабеля Обрыв силового кабеля",
       "responsible": "Ветрова И.С.",
-      "completed": false
+      "completed": true
     },
     {
       "id": 2,
@@ -52,6 +52,159 @@
       "equipment": "ТВ",
       "message": "Сообщение 7",
       "responsible": "Копылов А. С.",
+      "completed": false
+    },
+    {
+      "id": 1699621336539,
+      "date": 1699621336539,
+      "importance": "Высокая",
+      "equipment": "ПК",
+      "message": "Сообщение 3",
+      "responsible": "Клюев И. С.",
+      "completed": true
+    },
+    {
+      "id": 1699621337538,
+      "date": 1699621337538,
+      "importance": "Высокая",
+      "equipment": "ПК",
+      "message": "Сообщение 7",
+      "responsible": "Головин Э. С.",
+      "completed": false
+    },
+    {
+      "id": 1699621338541,
+      "date": 1699621338541,
+      "importance": "Критическая",
+      "equipment": "Провод",
+      "message": "Сообщение 6",
+      "responsible": "Головин Э. С.",
+      "completed": true
+    },
+    {
+      "id": 1699621339541,
+      "date": 1699621339541,
+      "importance": "Критическая",
+      "equipment": "ТВ",
+      "message": "Сообщение 5",
+      "responsible": "Копылов А. С.",
+      "completed": false
+    },
+    {
+      "id": 1699621340541,
+      "date": 1699621340541,
+      "importance": "Низкая",
+      "equipment": "Труба",
+      "message": "Сообщение 4",
+      "responsible": "Кожевникова З. Г.",
+      "completed": false
+    },
+    {
+      "id": 1699621341541,
+      "date": 1699621341541,
+      "importance": "Низкая",
+      "equipment": "Провод",
+      "message": "Сообщение 5",
+      "responsible": "Гончаров С. А.",
+      "completed": false
+    },
+    {
+      "id": 1699621342541,
+      "date": 1699621342541,
+      "importance": "Высокая",
+      "equipment": "Провод",
+      "message": "Сообщение 8",
+      "responsible": "Гончаров С. А.",
+      "completed": false
+    },
+    {
+      "id": 1699621343540,
+      "date": 1699621343540,
+      "importance": "Высокая",
+      "equipment": "Провод",
+      "message": "Сообщение 2",
+      "responsible": "Клюев И. С.",
+      "completed": false
+    },
+    {
+      "id": 1699621344542,
+      "date": 1699621344542,
+      "importance": "Низкая",
+      "equipment": "Труба",
+      "message": "Сообщение 6",
+      "responsible": "Гончаров С. А.",
+      "completed": true
+    },
+    {
+      "id": 1699621345538,
+      "date": 1699621345538,
+      "importance": "Высокая",
+      "equipment": "Провод",
+      "message": "Сообщение 8",
+      "responsible": "Дроздова Г. Р.",
+      "completed": true
+    },
+    {
+      "id": 1699621346542,
+      "date": 1699621346542,
+      "importance": "Критическая",
+      "equipment": "ТВ",
+      "message": "Сообщение 3",
+      "responsible": "Клюев И. С.",
+      "completed": false
+    },
+    {
+      "id": 1699621347541,
+      "date": 1699621347541,
+      "importance": "Низкая",
+      "equipment": "ТВ",
+      "message": "Сообщение 8",
+      "responsible": "Копылов А. С.",
+      "completed": false
+    },
+    {
+      "id": 1699621348537,
+      "date": 1699621348537,
+      "importance": "Высокая",
+      "equipment": "Насос",
+      "message": "Сообщение 10",
+      "responsible": "Журавлева Л. М.",
+      "completed": false
+    },
+    {
+      "id": 1699621349541,
+      "date": 1699621349541,
+      "importance": "Низкая",
+      "equipment": "ТВ",
+      "message": "Сообщение 4",
+      "responsible": "Журавлева Л. М.",
+      "completed": true
+    },
+    {
+      "id": 1699621350540,
+      "date": 1699621350540,
+      "importance": "Низкая",
+      "equipment": "ТВ",
+      "message": "Сообщение 5",
+      "responsible": "Дроздова Г. Р.",
+      "completed": false
+    },
+    {
+      "id": 1699621351541,
+      "date": 1699621351541,
+      "importance": "Критическая",
+      "equipment": "ПК",
+      "message": "Сообщение 8",
+      "responsible": "Кожевникова З. Г.",
+      "completed": false
+    },
+    {
+      "id": 1699621352536,
+      "date": 1699621352536,
+      "importance": "Высокая",
+      "equipment": "ТВ",
+      "message": "Сообщение 6",
+      "responsible": "Кожевникова З. Г.",
       "completed": false
     }
   ]
