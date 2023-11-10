@@ -7,7 +7,7 @@ import { useInterval } from "primereact/hooks";
 import { InputSwitch, InputSwitchChangeEvent } from "primereact/inputswitch";
 
 function App() {
-  const [activeAddMessages, setActiveAddMessages] = useState<boolean>(true);
+  const [activeAddMessages, setActiveAddMessages] = useState<boolean>(false);
   const [addEvent, { isError }] = useAddEventMutation();
   const addRandomEvent = async () => {
     await addEvent(generateRandomEvent()).unwrap();
