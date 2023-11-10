@@ -3,14 +3,13 @@ import {
   DataTable,
   DataTableSelectEvent,
   DataTableUnselectEvent,
-  DataTableRowClickEvent,
-  DataTableValue,
 } from "primereact/datatable";
 import { Column } from "primereact/column";
 import { useCompletedEventMutation, useGetEventsQuery } from "../store";
 import { formatDate } from "../utils/formatDate";
 import { InputText } from "primereact/inputtext";
 import { IEvent } from "../interfaces/app.interfaces";
+import { useEventListener } from "primereact/hooks";
 
 function Table() {
   const [globalFilterValue, setGlobalFilterValue] = useState<string>("");
@@ -23,8 +22,9 @@ function Table() {
     _sort: "date",
     _order: "desc",
   });
+  const [selectedRows, setSelectedRows] = useState<IEvent[]>([]);
+  console.log(selectedRows);
   const [selectedEvents, setSelectedEvents] = useState<IEvent[] | null>(null);
-  console.log(selectedEvents);
   const [compliteEvent, { isError }] = useCompletedEventMutation();
 
   const changeStatus = async (payload: IEvent) => {
@@ -44,6 +44,45 @@ function Table() {
       setSelectedEvents(events.filter((ev) => ev.completed));
     }
   }, [events]);
+
+  const [bindKeyDown, unbindKeyDown] = useEventListener({
+    type: "keydown",
+    listener: (e: KeyboardEvent) => {
+      onKeyDown(e);
+    },
+  });
+
+  const onKeyDown = (e: KeyboardEvent) => {
+    if (e.key === "ArrowUp") {
+      e.preventDefault();
+      moveSelection(-1);
+    } else if (e.key === "ArrowDown") {
+      e.preventDefault();
+      moveSelection(1);
+    } else if (e.key === " ") {
+      e.preventDefault();
+      console.log("пробел");
+    }
+  };
+
+  const moveSelection = (step: number) => {
+    const currentIndex = events.findIndex(
+      (row) => row === selectedRows[selectedRows.length - 1]
+    );
+    const newIndex = currentIndex + step;
+
+    if (newIndex >= 0 && newIndex < events.length) {
+      setSelectedRows([events[newIndex]]);
+    }
+  };
+
+  useEffect(() => {
+    bindKeyDown();
+    return () => {
+      unbindKeyDown();
+    };
+  }, [bindKeyDown, unbindKeyDown]);
+
   return (
     <>
       <InputText

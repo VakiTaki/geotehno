@@ -1,32 +1,38 @@
-import { useEffect, useRef } from "react";
+import { useState } from "react";
 import "primereact/resources/themes/saga-blue/theme.css";
 import { useAddEventMutation } from "./store";
 import { generateRandomEvent } from "./utils/generateRandomEvent";
 import Table from "./components/table";
-import { Button } from "primereact/button";
+import { useInterval } from "primereact/hooks";
+import { InputSwitch, InputSwitchChangeEvent } from "primereact/inputswitch";
 
 function App() {
-  const interval = useRef<NodeJS.Timeout | null>(null);
+  const [activeAddMessages, setActiveAddMessages] = useState<boolean>(true);
   const [addEvent, { isError }] = useAddEventMutation();
   const addRandomEvent = async () => {
     await addEvent(generateRandomEvent()).unwrap();
   };
-
-  useEffect(() => {
-    interval.current = setInterval(addRandomEvent, 10 * 1000);
-    return () => {
-      if (interval.current) clearInterval(interval.current);
-    };
-  }, []);
+  useInterval(
+    () => {
+      addRandomEvent();
+    },
+    5000,
+    activeAddMessages
+  );
   return (
-    <div className="">
-      <Button
-        onClick={() => {
-          if (interval.current) clearInterval(interval.current);
-        }}
-      >
-        Stop
-      </Button>
+    <div className=" mt-5 mx-5">
+      <div className="flex justify-content-center align-items-center mb-4 gap-2">
+        <InputSwitch
+          inputId="input-metakey"
+          checked={activeAddMessages}
+          onChange={(e: InputSwitchChangeEvent) =>
+            setActiveAddMessages(e.value!)
+          }
+        />
+        <label htmlFor="input-metakey">
+          Запустить/остановить генерацию сообщений
+        </label>
+      </div>
       <div className="">
         <Table />
       </div>

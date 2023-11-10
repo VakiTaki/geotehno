@@ -7,7 +7,7 @@
       "equipment": "ЛВС",
       "message": "Обрыв силового кабеля Обрыв силового кабеля Обрыв силового кабеля Обрыв силового кабеля Обрыв силового кабеля Обрыв силового кабеля",
       "responsible": "Ветрова И.С.",
-      "completed": false
+      "completed": true
     },
     {
       "id": 2,
@@ -25,6 +25,357 @@
       "equipment": "Люк",
       "message": "Открыта крышка",
       "responsible": "Капустин С.С.",
+      "completed": false
+    },
+    {
+      "id": 1699600255047,
+      "date": 1699600255047,
+      "importance": "Высокая",
+      "equipment": "ПК",
+      "message": "Сообщение 9",
+      "responsible": "Аксенов И. А.",
+      "completed": false
+    },
+    {
+      "id": 1699601058183,
+      "date": 1699601058183,
+      "importance": "Низкая",
+      "equipment": "Труба",
+      "message": "Сообщение 8",
+      "responsible": "Клюев И. С.",
+      "completed": false
+    },
+    {
+      "id": 1699601068167,
+      "date": 1699601068167,
+      "importance": "Критическая",
+      "equipment": "Труба",
+      "message": "Сообщение 9",
+      "responsible": "Клюев И. С.",
+      "completed": false
+    },
+    {
+      "id": 1699601078165,
+      "date": 1699601078165,
+      "importance": "Низкая",
+      "equipment": "ТВ",
+      "message": "Сообщение 2",
+      "responsible": "Журавлева Л. М.",
+      "completed": false
+    },
+    {
+      "id": 1699601088160,
+      "date": 1699601088160,
+      "importance": "Высокая",
+      "equipment": "Провод",
+      "message": "Сообщение 9",
+      "responsible": "Дроздова Г. Р.",
+      "completed": false
+    },
+    {
+      "id": 1699601098161,
+      "date": 1699601098161,
+      "importance": "Критическая",
+      "equipment": "ПК",
+      "message": "Сообщение 9",
+      "responsible": "Кожевникова З. Г.",
+      "completed": false
+    },
+    {
+      "id": 1699601117605,
+      "date": 1699601117605,
+      "importance": "Критическая",
+      "equipment": "ПК",
+      "message": "Сообщение 8",
+      "responsible": "Клюев И. С.",
+      "completed": false
+    },
+    {
+      "id": 1699601127600,
+      "date": 1699601127600,
+      "importance": "Низкая",
+      "equipment": "Насос",
+      "message": "Сообщение 10",
+      "responsible": "Клюев И. С.",
+      "completed": false
+    },
+    {
+      "id": 1699601137600,
+      "date": 1699601137600,
+      "importance": "Критическая",
+      "equipment": "ТВ",
+      "message": "Сообщение 2",
+      "responsible": "Копылов А. С.",
+      "completed": false
+    },
+    {
+      "id": 1699601147601,
+      "date": 1699601147601,
+      "importance": "Критическая",
+      "equipment": "Труба",
+      "message": "Сообщение 8",
+      "responsible": "Копылов А. С.",
+      "completed": false
+    },
+    {
+      "id": 1699601157604,
+      "date": 1699601157604,
+      "importance": "Высокая",
+      "equipment": "ТВ",
+      "message": "Сообщение 5",
+      "responsible": "Гончаров С. А.",
+      "completed": false
+    },
+    {
+      "id": 1699601167604,
+      "date": 1699601167604,
+      "importance": "Низкая",
+      "equipment": "Труба",
+      "message": "Сообщение 5",
+      "responsible": "Гончаров С. А.",
+      "completed": false
+    },
+    {
+      "id": 1699601186790,
+      "date": 1699601186790,
+      "importance": "Низкая",
+      "equipment": "Труба",
+      "message": "Сообщение 9",
+      "responsible": "Дроздова Г. Р.",
+      "completed": false
+    },
+    {
+      "id": 1699601196791,
+      "date": 1699601196791,
+      "importance": "Низкая",
+      "equipment": "ТВ",
+      "message": "Сообщение 7",
+      "responsible": "Грачев Э. Р.",
+      "completed": false
+    },
+    {
+      "id": 1699601226037,
+      "date": 1699601226037,
+      "importance": "Низкая",
+      "equipment": "ПК",
+      "message": "Сообщение 6",
+      "responsible": "Журавлева Л. М.",
+      "completed": false
+    },
+    {
+      "id": 1699601236041,
+      "date": 1699601236041,
+      "importance": "Высокая",
+      "equipment": "ПК",
+      "message": "Сообщение 7",
+      "responsible": "Лукьянов О. Б",
+      "completed": false
+    },
+    {
+      "id": 1699601246040,
+      "date": 1699601246040,
+      "importance": "Низкая",
+      "equipment": "Насос",
+      "message": "Сообщение 6",
+      "responsible": "Кожевникова З. Г.",
+      "completed": false
+    },
+    {
+      "id": 1699601256037,
+      "date": 1699601256037,
+      "importance": "Высокая",
+      "equipment": "Провод",
+      "message": "Сообщение 3",
+      "responsible": "Аксенов И. А.",
+      "completed": false
+    },
+    {
+      "id": 1699601262786,
+      "date": 1699601262786,
+      "importance": "Критическая",
+      "equipment": "Труба",
+      "message": "Сообщение 8",
+      "responsible": "Лукьянов О. Б",
+      "completed": false
+    },
+    {
+      "id": 1699601263791,
+      "date": 1699601263791,
+      "importance": "Низкая",
+      "equipment": "Труба",
+      "message": "Сообщение 9",
+      "responsible": "Гончаров С. А.",
+      "completed": false
+    },
+    {
+      "id": 1699601264787,
+      "date": 1699601264787,
+      "importance": "Низкая",
+      "equipment": "Труба",
+      "message": "Сообщение 2",
+      "responsible": "Клюев И. С.",
+      "completed": false
+    },
+    {
+      "id": 1699601271584,
+      "date": 1699601271584,
+      "importance": "Низкая",
+      "equipment": "ПК",
+      "message": "Сообщение 2",
+      "responsible": "Аксенов И. А.",
+      "completed": false
+    },
+    {
+      "id": 1699601272589,
+      "date": 1699601272589,
+      "importance": "Низкая",
+      "equipment": "ПК",
+      "message": "Сообщение 7",
+      "responsible": "Журавлева Л. М.",
+      "completed": false
+    },
+    {
+      "id": 1699601273589,
+      "date": 1699601273589,
+      "importance": "Критическая",
+      "equipment": "ПК",
+      "message": "Сообщение 2",
+      "responsible": "Копылов А. С.",
+      "completed": false
+    },
+    {
+      "id": 1699601274590,
+      "date": 1699601274590,
+      "importance": "Критическая",
+      "equipment": "Провод",
+      "message": "Сообщение 8",
+      "responsible": "Клюев И. С.",
+      "completed": false
+    },
+    {
+      "id": 1699601316007,
+      "date": 1699601316007,
+      "importance": "Низкая",
+      "equipment": "Труба",
+      "message": "Сообщение 4",
+      "responsible": "Головин Э. С.",
+      "completed": false
+    },
+    {
+      "id": 1699601542612,
+      "date": 1699601542612,
+      "importance": "Низкая",
+      "equipment": "ТВ",
+      "message": "Сообщение 8",
+      "responsible": "Лукьянов О. Б",
+      "completed": false
+    },
+    {
+      "id": 1699601543610,
+      "date": 1699601543610,
+      "importance": "Низкая",
+      "equipment": "ТВ",
+      "message": "Сообщение 10",
+      "responsible": "Копылов А. С.",
+      "completed": false
+    },
+    {
+      "id": 1699601544613,
+      "date": 1699601544613,
+      "importance": "Низкая",
+      "equipment": "ПК",
+      "message": "Сообщение 3",
+      "responsible": "Журавлева Л. М.",
+      "completed": false
+    },
+    {
+      "id": 1699601704894,
+      "date": 1699601704894,
+      "importance": "Высокая",
+      "equipment": "ТВ",
+      "message": "Сообщение 9",
+      "responsible": "Аксенов И. А.",
+      "completed": false
+    },
+    {
+      "id": 1699601705890,
+      "date": 1699601705890,
+      "importance": "Низкая",
+      "equipment": "Насос",
+      "message": "Сообщение 9",
+      "responsible": "Дроздова Г. Р.",
+      "completed": false
+    },
+    {
+      "id": 1699601734177,
+      "date": 1699601734177,
+      "importance": "Критическая",
+      "equipment": "Труба",
+      "message": "Сообщение 6",
+      "responsible": "Аксенов И. А.",
+      "completed": false
+    },
+    {
+      "id": 1699601756740,
+      "date": 1699601756740,
+      "importance": "Низкая",
+      "equipment": "ПК",
+      "message": "Сообщение 8",
+      "responsible": "Аксенов И. А.",
+      "completed": false
+    },
+    {
+      "id": 1699601757736,
+      "date": 1699601757736,
+      "importance": "Высокая",
+      "equipment": "Провод",
+      "message": "Сообщение 9",
+      "responsible": "Лукьянов О. Б",
+      "completed": true
+    },
+    {
+      "id": 1699601803155,
+      "date": 1699601803155,
+      "importance": "Критическая",
+      "equipment": "ТВ",
+      "message": "Сообщение 10",
+      "responsible": "Журавлева Л. М.",
+      "completed": true
+    },
+    {
+      "id": 1699601808152,
+      "date": 1699601808152,
+      "importance": "Высокая",
+      "equipment": "ПК",
+      "message": "Сообщение 2",
+      "responsible": "Клюев И. С.",
+      "completed": true
+    },
+    {
+      "id": 1699601883041,
+      "date": 1699601883041,
+      "importance": "Высокая",
+      "equipment": "Провод",
+      "message": "Сообщение 9",
+      "responsible": "Аксенов И. А.",
+      "completed": true
+    },
+    {
+      "id": 1699601888040,
+      "date": 1699601888040,
+      "importance": "Критическая",
+      "equipment": "ПК",
+      "message": "Сообщение 9",
+      "responsible": "Лукьянов О. Б",
+      "completed": true
+    },
+    {
+      "id": 1699601957306,
+      "date": 1699601957306,
+      "importance": "Критическая",
+      "equipment": "Труба",
+      "message": "Сообщение 3",
+      "responsible": "Журавлева Л. М.",
       "completed": false
     }
   ]
