@@ -20,16 +20,19 @@ function App() {
     activeAddMessages
   );
   return (
-    <div className=" mt-5 mx-5">
-      <div className="flex justify-content-center align-items-center mb-4 gap-2">
-        <InputSwitch
-          inputId="input-metakey"
-          checked={activeAddMessages}
-          onChange={(e: InputSwitchChangeEvent) =>
-            setActiveAddMessages(e.value!)
-          }
-        />
-        <label htmlFor="input-metakey">
+    <div className=" mt-5 mx-5 border p-5 rounded-md bg-blue-200">
+      <div className="flex flex-col  md:flex-row justify-content-center align-items-center mb-4 gap-2">
+        <div className="w-full flex justify-center md:w-fit">
+          <InputSwitch
+            inputId="input-metakey"
+            checked={activeAddMessages}
+            onChange={(e: InputSwitchChangeEvent) =>
+              setActiveAddMessages(e.value!)
+            }
+          />
+        </div>
+
+        <label htmlFor="input-metakey" className=" text-center">
           Запустить/остановить генерацию сообщений
         </label>
       </div>

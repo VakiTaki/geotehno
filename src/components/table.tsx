@@ -1,5 +1,5 @@
-import { useState, useRef, useEffect } from "react";
-import { DataTable } from "primereact/datatable";
+import { useState, useEffect } from "react";
+import { DataTable, DataTableRowClickEvent } from "primereact/datatable";
 import { Column } from "primereact/column";
 import { Paginator, PaginatorPageChangeEvent } from "primereact/paginator";
 import { useCompletedEventMutation, useGetEventsQuery } from "../store";
@@ -7,7 +7,7 @@ import { formatDate } from "../utils/formatDate";
 import { InputText } from "primereact/inputtext";
 import { IEvent } from "../interfaces/app.interfaces";
 import { useEventListener } from "primereact/hooks";
-import { paginate } from "../utils/pagibate";
+import { paginate } from "../utils/paginate";
 
 function Table() {
   const [first, setFirst] = useState<number>(0);
@@ -37,8 +37,10 @@ function Table() {
 
   const onKeyDown = (e: KeyboardEvent) => {
     if (e.key === "ArrowUp") {
+      e.preventDefault();
       moveSelection(-1);
     } else if (e.key === "ArrowDown") {
+      e.preventDefault();
       moveSelection(1);
     } else if (e.key === " ") {
       if (selectedRow) changeStatus(selectedRow);
@@ -67,12 +69,24 @@ function Table() {
 
   const onPageChange = (event: PaginatorPageChangeEvent) => {
     setFirst(event.first);
+    setSelectedRow(events[event.first]);
+  };
+
+  const handleRowClick = (e: DataTableRowClickEvent) => {
+    //Закостылил ошибку в либе (ну или я LoL))
+    if (document.activeElement instanceof HTMLElement) {
+      document.activeElement.blur();
+    }
+    const { id } = e.data;
+    const eventById = events?.find((e) => e.id === id);
+    if (eventById) changeStatus(eventById);
   };
 
   const crop = paginate(events, first, 5);
+
   return (
     <>
-      <div className=" flex justify-between items-center my-4">
+      <div className=" flex flex-col md:flex-row  md:justify-between md:items-center my-4 gap-4">
         <h1 className=" font-semibold text-2xl">Журнал событий</h1>
         <InputText
           value={globalFilterValue}
@@ -82,20 +96,20 @@ function Table() {
       </div>
 
       {isSuccess && (
-        <div>
+        <div className="">
           <DataTable
             value={crop}
-            // paginator
-            // rows={5}
-            // rowsPerPageOptions={[5, 10]}
             sortMode="multiple"
             tableStyle={{ minWidth: "50rem" }}
-            className="bg-red-500"
             selectionMode="single"
             selection={selectedRow!}
-            onSelectionChange={(e) => changeStatus(e.value)}
+            onSelectionChange={(e) => {
+              changeStatus(e.value);
+              setSelectedRow(e.value);
+            }}
             dataKey="id"
-            tabIndex={4}
+            emptyMessage="Ничего не найдено"
+            onRowClick={(e) => handleRowClick(e)}
           >
             <Column
               body={(rowData) => (
@@ -125,12 +139,13 @@ function Table() {
               header="Ответственный"
             ></Column>
           </DataTable>
-          <div className="">
+          <div className=" rounded-none">
             <Paginator
               first={first}
               rows={5}
               totalRecords={events.length}
               onPageChange={onPageChange}
+              style={{ borderRadius: "0px" }}
             />
           </div>
         </div>
