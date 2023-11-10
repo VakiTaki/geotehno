@@ -16,11 +16,11 @@ function App() {
     () => {
       addRandomEvent();
     },
-    1000,
+    3 * 1000,
     activeAddMessages
   );
   return (
-    <div className=" mt-5 mx-5 border p-5 rounded-md bg-blue-200">
+    <div className=" my-1 mx-1 md:my-5 md:mx-5 border p-1 md:p-5 rounded-md bg-blue-200">
       <div className="flex flex-col  md:flex-row justify-content-center align-items-center mb-4 gap-2">
         <div className="w-full flex justify-center md:w-fit">
           <InputSwitch

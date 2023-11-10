@@ -8,8 +8,10 @@ import { InputText } from "primereact/inputtext";
 import { IEvent } from "../interfaces/app.interfaces";
 import { useEventListener } from "primereact/hooks";
 import { paginate } from "../utils/paginate";
+import { useResize } from "../hooks/useResize";
 
 function Table() {
+  const { isScreenLg, isScreenMd, isScreenSm } = useResize();
   const [countPerPage, setCountPerPage] = useState<number>(5);
   const [first, setFirst] = useState<number>(0);
   const [globalFilterValue, setGlobalFilterValue] = useState<string>("");
@@ -76,6 +78,16 @@ function Table() {
     };
   }, [bindKeyDown, unbindKeyDown]);
 
+  useEffect(() => {
+    if (isScreenLg) {
+      setCountPerPage(20);
+    } else if (isScreenMd) {
+      setCountPerPage(15);
+    } else {
+      setCountPerPage(10);
+    }
+  }, [isScreenLg, isScreenMd, isScreenSm]);
+
   const onPageChange = (event: PaginatorPageChangeEvent) => {
     setSelectedRow(null);
     setFirst(event.first);
@@ -106,9 +118,9 @@ function Table() {
       {isSuccess && (
         <div className="">
           <DataTable
+            size={"small"}
             value={crop}
             sortMode="multiple"
-            tableStyle={{ minWidth: "50rem" }}
             selectionMode="single"
             selection={selectedRow!}
             onSelectionChange={(e) => {
@@ -135,13 +147,23 @@ function Table() {
               field="date"
               sortable
               header="Дата"
+              style={{ minWidth: "130px" }}
               body={(rowData) => (
                 <span className="">{formatDate(rowData.date)}</span>
               )}
             ></Column>
             <Column field="importance" sortable header="Важность"></Column>
-            <Column field="equipment" sortable header="Оборудование"></Column>
-            <Column field="message" header="Сообщение"></Column>
+            <Column
+              field="equipment"
+              sortable
+              header="Оборудование"
+              style={{ width: "150px" }}
+            ></Column>
+            <Column
+              field="message"
+              header="Сообщение"
+              style={{ minWidth: "300px" }}
+            ></Column>
             <Column
               field="responsible"
               sortable
