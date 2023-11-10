@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { DataTable, DataTableRowClickEvent } from "primereact/datatable";
 import { Column } from "primereact/column";
 import { Paginator, PaginatorPageChangeEvent } from "primereact/paginator";
@@ -44,7 +44,10 @@ function Table() {
       e.preventDefault();
       moveSelection(1);
     } else if (e.key === " ") {
-      if (selectedRow) changeStatus(selectedRow);
+      if (selectedRow)
+        changeStatus(
+          events[events.findIndex((ev) => ev.id === selectedRow?.id)]
+        );
       setSelectedRow(
         events[events.findIndex((ev) => ev.id === selectedRow?.id)]
       );
@@ -52,6 +55,9 @@ function Table() {
   };
 
   const moveSelection = (step: number) => {
+    if (document.activeElement instanceof HTMLElement) {
+      document.activeElement.blur();
+    }
     const currentIndex = events.findIndex((ev) => ev.id === selectedRow?.id);
     const newIndex = currentIndex < 0 ? first : currentIndex + step;
     if (newIndex >= 0 && newIndex < events.length) {
@@ -76,7 +82,6 @@ function Table() {
   };
 
   const handleRowClick = (e: DataTableRowClickEvent) => {
-    //Закостылил ошибку в либе (ну или я LoL))
     if (document.activeElement instanceof HTMLElement) {
       document.activeElement.blur();
     }
@@ -113,6 +118,7 @@ function Table() {
             dataKey="id"
             emptyMessage="Ничего не найдено"
             onRowClick={(e) => handleRowClick(e)}
+            tabIndex={-1}
           >
             <Column
               body={(rowData) => (
