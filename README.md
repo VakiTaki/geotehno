@@ -1,5 +1,7 @@
 Журнал событий - тестовое задание от Андрея Родина.
 
+https://github.com/VakiTaki/geotehno.git
+
 Стек: TypeScript, Tailwind + PrimeReact, RTK Query
 
 Описание:
