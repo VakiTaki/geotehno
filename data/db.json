@@ -26,51 +26,6 @@
       "message": "Открыта крышка",
       "responsible": "Капустин С.С.",
       "completed": false
-    },
-    {
-      "id": 1699639794616,
-      "date": 1699639794616,
-      "importance": "Критическая",
-      "equipment": "Осциллограф",
-      "message": "Высокое напряжение",
-      "responsible": "Грачев Э. Р.",
-      "completed": false
-    },
-    {
-      "id": 1699639797597,
-      "date": 1699639797597,
-      "importance": "Низкая",
-      "equipment": "Осциллограф",
-      "message": "Неисправно",
-      "responsible": "Кожевникова З. Г.",
-      "completed": false
-    },
-    {
-      "id": 1699639800602,
-      "date": 1699639800602,
-      "importance": "Высокая",
-      "equipment": "Маятник",
-      "message": "Нарушение режима",
-      "responsible": "Гончаров С. А.",
-      "completed": false
-    },
-    {
-      "id": 1699686593916,
-      "date": 1699686593916,
-      "importance": "Критическая",
-      "equipment": "Провод",
-      "message": "Неисправен конденсатор",
-      "responsible": "Копылов А. С.",
-      "completed": false
-    },
-    {
-      "id": 1699686854315,
-      "date": 1699686854315,
-      "importance": "Критическая",
-      "equipment": "Осциллограф",
-      "message": "Нарушение пайки разьема на печатной плате",
-      "responsible": "Журавлева Л. М.",
-      "completed": false
     }
   ]
 }

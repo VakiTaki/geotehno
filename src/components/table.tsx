@@ -130,11 +130,9 @@ function Table() {
           <DataTable
             size={"small"}
             value={crop}
-            sortMode="multiple"
             selectionMode="single"
             selection={selectedRow!}
             onSelectionChange={(e) => {
-              changeStatus(e.value);
               setSelectedRow(null);
             }}
             dataKey="id"
@@ -152,20 +150,19 @@ function Table() {
                   )}
                 </span>
               )}
+              style={{ minWidth: "40px" }}
             ></Column>
             <Column
               field="date"
-              sortable
               header="Дата"
               style={{ minWidth: "130px" }}
               body={(rowData) => (
                 <span className="">{formatDate(rowData.date)}</span>
               )}
             ></Column>
-            <Column field="importance" sortable header="Важность"></Column>
+            <Column field="importance" header="Важность"></Column>
             <Column
               field="equipment"
-              sortable
               header="Оборудование"
               style={{ width: "150px" }}
             ></Column>
@@ -174,11 +171,7 @@ function Table() {
               header="Сообщение"
               style={{ minWidth: "300px" }}
             ></Column>
-            <Column
-              field="responsible"
-              sortable
-              header="Ответственный"
-            ></Column>
+            <Column field="responsible" header="Ответственный"></Column>
           </DataTable>
           <div className=" rounded-none">
             <Paginator
