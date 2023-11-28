@@ -6,10 +6,12 @@ import { Toast } from "primereact/toast";
 import { useCompletedEventMutation, useGetEventsQuery } from "../store";
 import { formatDate } from "../utils/formatDate";
 import { InputText } from "primereact/inputtext";
-import { IEvent } from "../interfaces/app.interfaces";
+import { IEvent, IUser } from "../interfaces/app.interfaces";
 import { useEventListener } from "primereact/hooks";
 import { paginate } from "../utils/paginate";
 import { useResize } from "../hooks/useResize";
+import UniversalDataTable from "./dataTable";
+import { useGetUsersQuery } from "../store/usersApi";
 
 function Table() {
   const toast = useRef<Toast>(null);
@@ -30,6 +32,16 @@ function Table() {
     _sort: "date",
     _order: "desc",
   });
+  const {
+    data: users = [],
+    isSuccess: usersIsSuccess,
+    isError: usersIsError,
+  } = useGetUsersQuery({
+    // message_like: globalFilterValue,
+    // _sort: "date",
+    // _order: "desc",
+  });
+  console.log(users);
   const [selectedRow, setSelectedRow] = useState<IEvent | null>(null);
   const [compliteEvent, { isError: completedIsError }] =
     useCompletedEventMutation();
@@ -114,6 +126,8 @@ function Table() {
     }
   }, [isError, completedIsError]);
 
+  const userKeys = ["id", "email", "phone"] as (keyof IUser)[];
+
   return (
     <>
       <div className=" flex flex-col md:flex-row  md:justify-between md:items-center my-4 gap-4">
@@ -126,63 +140,10 @@ function Table() {
       </div>
 
       {isSuccess && (
-        <div className="">
-          <DataTable
-            size={"small"}
-            value={crop}
-            selectionMode="single"
-            selection={selectedRow!}
-            onSelectionChange={(e) => {
-              setSelectedRow(null);
-            }}
-            dataKey="id"
-            emptyMessage="Ничего не найдено"
-            onRowClick={(e) => handleRowClick(e)}
-            tabIndex={-1}
-          >
-            <Column
-              body={(rowData) => (
-                <span>
-                  {rowData.completed ? (
-                    <i className="pi pi-check text-green-500"></i>
-                  ) : (
-                    <i className="pi pi-times text-red-500"></i>
-                  )}
-                </span>
-              )}
-              style={{ minWidth: "40px" }}
-            ></Column>
-            <Column
-              field="date"
-              header="Дата"
-              style={{ minWidth: "130px" }}
-              body={(rowData) => (
-                <span className="">{formatDate(rowData.date)}</span>
-              )}
-            ></Column>
-            <Column field="importance" header="Важность"></Column>
-            <Column
-              field="equipment"
-              header="Оборудование"
-              style={{ width: "150px" }}
-            ></Column>
-            <Column
-              field="message"
-              header="Сообщение"
-              style={{ minWidth: "300px" }}
-            ></Column>
-            <Column field="responsible" header="Ответственный"></Column>
-          </DataTable>
-          <div className=" rounded-none">
-            <Paginator
-              first={first}
-              rows={countPerPage}
-              totalRecords={events.length}
-              onPageChange={onPageChange}
-              style={{ borderRadius: "0px" }}
-            />
-          </div>
-        </div>
+        <>
+          <UniversalDataTable data={events} />
+          <UniversalDataTable data={users} keys={userKeys} />
+        </>
       )}
       <Toast ref={toast} />
     </>

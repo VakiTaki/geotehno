@@ -7,7 +7,7 @@
       "equipment": "ЛВС",
       "message": "Обрыв силового кабеля",
       "responsible": "Ветрова И.С.",
-      "completed": true
+      "completed": false
     },
     {
       "id": 2,
@@ -16,7 +16,7 @@
       "equipment": "ИБП",
       "message": "Низкий заряд батареи",
       "responsible": "Лавочкин А.В.",
-      "completed": true
+      "completed": false
     },
     {
       "id": 3,
@@ -26,6 +26,137 @@
       "message": "Открыта крышка",
       "responsible": "Капустин С.С.",
       "completed": false
+    },
+    {
+      "id": 1701158680432,
+      "date": 1701158680432,
+      "importance": "Низкая",
+      "equipment": "Кондиционер",
+      "message": "Неисправно",
+      "responsible": "Дроздова Г. Р.",
+      "completed": false
+    },
+    {
+      "id": 1701166113613,
+      "date": 1701166113613,
+      "importance": "Критическая",
+      "equipment": "Провод",
+      "message": "Нарушение режима",
+      "responsible": "Лукьянов О. Б",
+      "completed": false
+    },
+    {
+      "id": 1701166116617,
+      "date": 1701166116617,
+      "importance": "Низкая",
+      "equipment": "Осциллограф",
+      "message": "Неисправно",
+      "responsible": "Клюев И. С.",
+      "completed": false
+    },
+    {
+      "id": 1701166119613,
+      "date": 1701166119613,
+      "importance": "Критическая",
+      "equipment": "Осциллограф",
+      "message": "Обрыв провода питания",
+      "responsible": "Аксенов И. А.",
+      "completed": false
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "email": "test@test.ru",
+      "firstName": "Mitser",
+      "organizationId": "555",
+      "created": 1342343252,
+      "updated": 134134134234,
+      "phone": "8908123456",
+      "photoId": "123fwr4fw4fw",
+      "photoOriginal": "",
+      "photoTargetWidth": 0,
+      "photoTargetX": 0,
+      "photoTargetY": 0,
+      "birthDate": "11.11.2023",
+      "lastName": "Sisterov",
+      "patronymic": "Vovkovich",
+      "name": "Sisterov Mitser Vovkovich",
+      "roleIds": [
+        1,
+        2,
+        3
+      ],
+      "roleNames": [],
+      "roles": [],
+      "blocked": false,
+      "homeTimeZone": "MSK",
+      "position": "Developer",
+      "organizationName": "ГТС",
+      "groupName": "АСКЕ",
+      "techData": ""
+    },
+    {
+      "id": "2",
+      "email": "test@test.ru",
+      "firstName": "Mitser",
+      "organizationId": "555",
+      "created": 1342343252,
+      "updated": 134134134234,
+      "phone": "8908123456",
+      "photoId": "123fwr4fw4fw",
+      "photoOriginal": "",
+      "photoTargetWidth": 0,
+      "photoTargetX": 0,
+      "photoTargetY": 0,
+      "birthDate": "11.11.2023",
+      "lastName": "Sisterov",
+      "patronymic": "Vovkovich",
+      "name": "Sisterov Mitser Vovkovich",
+      "roleIds": [
+        1,
+        2,
+        3
+      ],
+      "roleNames": [],
+      "roles": [],
+      "blocked": false,
+      "homeTimeZone": "MSK",
+      "position": "Developer",
+      "organizationName": "ГТС",
+      "groupName": "АСКЕ",
+      "techData": ""
+    },
+    {
+      "id": "3",
+      "email": "test@test.ru",
+      "firstName": "Mitser",
+      "organizationId": "555",
+      "created": 1342343252,
+      "updated": 134134134234,
+      "phone": "8908123456",
+      "photoId": "123fwr4fw4fw",
+      "photoOriginal": "",
+      "photoTargetWidth": 0,
+      "photoTargetX": 0,
+      "photoTargetY": 0,
+      "birthDate": "11.11.2023",
+      "lastName": "Sisterov",
+      "patronymic": "Vovkovich",
+      "name": "Sisterov Mitser Vovkovich",
+      "roleIds": [
+        1,
+        2,
+        3
+      ],
+      "roleNames": [],
+      "roles": [],
+      "blocked": false,
+      "homeTimeZone": "MSK",
+      "position": "Developer",
+      "organizationName": "ГТС",
+      "groupName": "АСКЕ",
+      "techData": ""
     }
   ]
 }
